@@ -1,0 +1,9 @@
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Mapping\bin\Debug\netstandard2.1\RentACar.Services.Mapping.deps.json
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Mapping\bin\Debug\netstandard2.1\RentACar.Services.Mapping.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Mapping\bin\Debug\netstandard2.1\RentACar.Services.Mapping.pdb
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Mapping\obj\Debug\netstandard2.1\RentACar.Services.Mapping.csprojAssemblyReference.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Mapping\obj\Debug\netstandard2.1\RentACar.Services.Mapping.AssemblyInfoInputs.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Mapping\obj\Debug\netstandard2.1\RentACar.Services.Mapping.AssemblyInfo.cs
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Mapping\obj\Debug\netstandard2.1\RentACar.Services.Mapping.csproj.CoreCompileInputs.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Mapping\obj\Debug\netstandard2.1\RentACar.Services.Mapping.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Mapping\obj\Debug\netstandard2.1\RentACar.Services.Mapping.pdb

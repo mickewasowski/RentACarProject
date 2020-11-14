@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "HJikDw2DqUW9ueYhYpPRbihb5AJAYg/0iYp1iTTciLht9P5WUqaZ9ipXSZnJXLUvT3uwABiskEsjMfn+dNAyHQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Web\\RentACar.Web.Infrastructure\\RentACar.Web.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\R. Yorgova\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
+    "C:\\Users\\R. Yorgova\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,16 @@
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\bin\Debug\netstandard2.1\RentACar.Web.ViewModels.deps.json
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\bin\Debug\netstandard2.1\RentACar.Web.ViewModels.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\bin\Debug\netstandard2.1\RentACar.Web.ViewModels.pdb
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\bin\Debug\netstandard2.1\RentACar.Data.Common.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\bin\Debug\netstandard2.1\RentACar.Data.Models.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\bin\Debug\netstandard2.1\RentACar.Services.Mapping.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\bin\Debug\netstandard2.1\RentACar.Data.Models.pdb
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\bin\Debug\netstandard2.1\RentACar.Services.Mapping.pdb
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\bin\Debug\netstandard2.1\RentACar.Data.Common.pdb
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\obj\Debug\netstandard2.1\RentACar.Web.ViewModels.csprojAssemblyReference.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\obj\Debug\netstandard2.1\RentACar.Web.ViewModels.AssemblyInfoInputs.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\obj\Debug\netstandard2.1\RentACar.Web.ViewModels.AssemblyInfo.cs
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\obj\Debug\netstandard2.1\RentACar.Web.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\obj\Debug\netstandard2.1\RentACar.Web.ViewModels.csproj.CopyComplete
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\obj\Debug\netstandard2.1\RentACar.Web.ViewModels.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.ViewModels\obj\Debug\netstandard2.1\RentACar.Web.ViewModels.pdb

@@ -1,0 +1,9 @@
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.Infrastructure\bin\Debug\netstandard2.1\RentACar.Web.Infrastructure.deps.json
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.Infrastructure\bin\Debug\netstandard2.1\RentACar.Web.Infrastructure.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.Infrastructure\bin\Debug\netstandard2.1\RentACar.Web.Infrastructure.pdb
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.Infrastructure\obj\Debug\netstandard2.1\RentACar.Web.Infrastructure.csprojAssemblyReference.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.Infrastructure\obj\Debug\netstandard2.1\RentACar.Web.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.Infrastructure\obj\Debug\netstandard2.1\RentACar.Web.Infrastructure.AssemblyInfo.cs
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.Infrastructure\obj\Debug\netstandard2.1\RentACar.Web.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.Infrastructure\obj\Debug\netstandard2.1\RentACar.Web.Infrastructure.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web.Infrastructure\obj\Debug\netstandard2.1\RentACar.Web.Infrastructure.pdb

@@ -1,0 +1,9 @@
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services\bin\Debug\netstandard2.1\RentACar.Services.deps.json
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services\bin\Debug\netstandard2.1\RentACar.Services.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services\bin\Debug\netstandard2.1\RentACar.Services.pdb
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services\obj\Debug\netstandard2.1\RentACar.Services.AssemblyInfoInputs.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services\obj\Debug\netstandard2.1\RentACar.Services.AssemblyInfo.cs
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services\obj\Debug\netstandard2.1\RentACar.Services.csproj.CoreCompileInputs.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services\obj\Debug\netstandard2.1\RentACar.Services.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services\obj\Debug\netstandard2.1\RentACar.Services.pdb
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services\obj\Debug\netstandard2.1\RentACar.Services.csprojAssemblyReference.cache

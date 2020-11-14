@@ -1,0 +1,9 @@
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Messaging\bin\Debug\netstandard2.1\RentACar.Services.Messaging.deps.json
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Messaging\bin\Debug\netstandard2.1\RentACar.Services.Messaging.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Messaging\bin\Debug\netstandard2.1\RentACar.Services.Messaging.pdb
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Messaging\obj\Debug\netstandard2.1\RentACar.Services.Messaging.csprojAssemblyReference.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Messaging\obj\Debug\netstandard2.1\RentACar.Services.Messaging.AssemblyInfoInputs.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Messaging\obj\Debug\netstandard2.1\RentACar.Services.Messaging.AssemblyInfo.cs
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Messaging\obj\Debug\netstandard2.1\RentACar.Services.Messaging.csproj.CoreCompileInputs.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Messaging\obj\Debug\netstandard2.1\RentACar.Services.Messaging.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Services\RentACar.Services.Messaging\obj\Debug\netstandard2.1\RentACar.Services.Messaging.pdb

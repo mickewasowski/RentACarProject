@@ -1,0 +1,9 @@
+C:\Users\R. Yorgova\Desktop\RentACar\RentACar.Common\bin\Debug\netstandard2.1\RentACar.Common.deps.json
+C:\Users\R. Yorgova\Desktop\RentACar\RentACar.Common\bin\Debug\netstandard2.1\RentACar.Common.dll
+C:\Users\R. Yorgova\Desktop\RentACar\RentACar.Common\bin\Debug\netstandard2.1\RentACar.Common.pdb
+C:\Users\R. Yorgova\Desktop\RentACar\RentACar.Common\obj\Debug\netstandard2.1\RentACar.Common.csprojAssemblyReference.cache
+C:\Users\R. Yorgova\Desktop\RentACar\RentACar.Common\obj\Debug\netstandard2.1\RentACar.Common.AssemblyInfoInputs.cache
+C:\Users\R. Yorgova\Desktop\RentACar\RentACar.Common\obj\Debug\netstandard2.1\RentACar.Common.AssemblyInfo.cs
+C:\Users\R. Yorgova\Desktop\RentACar\RentACar.Common\obj\Debug\netstandard2.1\RentACar.Common.csproj.CoreCompileInputs.cache
+C:\Users\R. Yorgova\Desktop\RentACar\RentACar.Common\obj\Debug\netstandard2.1\RentACar.Common.dll
+C:\Users\R. Yorgova\Desktop\RentACar\RentACar.Common\obj\Debug\netstandard2.1\RentACar.Common.pdb

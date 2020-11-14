@@ -10,7 +10,7 @@ using RentACar.Data;
 namespace RentACar.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201114153448_TemporaryModifiedUserEntity")]
+    [Migration("20201114154606_TemporaryModifiedUserEntity")]
     partial class TemporaryModifiedUserEntity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -174,7 +174,7 @@ namespace RentACar.Data.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("Age")
+                    b.Property<int?>("Age")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -195,7 +195,6 @@ namespace RentACar.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(40)")
                         .HasMaxLength(40);
 

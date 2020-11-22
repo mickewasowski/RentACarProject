@@ -13,6 +13,7 @@ using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("RentACar.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Data\\RentACar.Data", "RentACar.Data.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("RentACar.Services.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Services\\RentACar.Services.Data", "RentACar.Services.Data.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("RentACar.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Web\\RentACar.Web", "RentACar.Web.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("RentACar.Web.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]

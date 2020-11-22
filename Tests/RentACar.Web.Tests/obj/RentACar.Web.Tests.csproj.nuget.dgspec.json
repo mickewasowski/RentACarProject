@@ -327,15 +327,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
               "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Data\\RentACar.Data.Common\\RentACar.Data.Common.csproj": {
                 "projectPath": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Data\\RentACar.Data.Common\\RentACar.Data.Common.csproj"
@@ -345,6 +345,9 @@
               },
               "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Services\\RentACar.Services.Mapping\\RentACar.Services.Mapping.csproj": {
                 "projectPath": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Services\\RentACar.Services.Mapping\\RentACar.Services.Mapping.csproj"
+              },
+              "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Web\\RentACar.Web.ViewModels\\RentACar.Web.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Web\\RentACar.Web.ViewModels\\RentACar.Web.ViewModels.csproj"
               }
             }
           }
@@ -356,9 +359,13 @@
         }
       },
       "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Cloudinary.Core": {
+              "target": "Package",
+              "version": "[1.31.0, )"
+            },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
               "suppressParent": "All",
@@ -377,7 +384,7 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
@@ -797,6 +804,10 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
               "suppressParent": "All",

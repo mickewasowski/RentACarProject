@@ -91,3 +91,8 @@ C:\Users\R. Yorgova\Desktop\RentACar\Tests\Sandbox\obj\Debug\netcoreapp3.1\Sandb
 C:\Users\R. Yorgova\Desktop\RentACar\Tests\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.dll
 C:\Users\R. Yorgova\Desktop\RentACar\Tests\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.pdb
 C:\Users\R. Yorgova\Desktop\RentACar\Tests\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.genruntimeconfig.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Tests\Sandbox\bin\Debug\netcoreapp3.1\Cloudinary.Core.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Tests\Sandbox\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Tests\Sandbox\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Tests\Sandbox\bin\Debug\netcoreapp3.1\RentACar.Web.ViewModels.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Tests\Sandbox\bin\Debug\netcoreapp3.1\RentACar.Web.ViewModels.pdb

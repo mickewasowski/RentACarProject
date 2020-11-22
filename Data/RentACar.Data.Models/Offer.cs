@@ -28,8 +28,8 @@
         public virtual ApplicationUser User { get; set; }  // is this the creator or the customer ??
 
         // Deletable Entity
-        public bool IsDeleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool IsDeleted { get ; set ; }
 
-        public DateTime? DeletedOn { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTime? DeletedOn { get ; set ; }
     }
 }

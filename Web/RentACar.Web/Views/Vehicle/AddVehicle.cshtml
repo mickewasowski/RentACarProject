@@ -1,0 +1,119 @@
+﻿@using RentACar.Data.Models;
+
+@model RentACar.Web.ViewModels.Vehicle.AddVehicleViewModel
+@{
+    this.ViewData["Title"] = "Add new vehicle";
+}
+
+<div class="align-content-center">
+    <h1>Add New Vehicle</h1>
+</div>
+
+
+@*class="col-md-4 offset-md-3" it was in the form tag *@
+<form method="post"
+      enctype="multipart/form-data">
+    <div class="row">
+        <div class="form-group col">
+            <label asp-for="Brand"></label>
+            <input asp-for="Brand" class="form-control" />
+            <span asp-validation-for="Brand" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            <label asp-for="Model"></label>
+            <input asp-for="Model" class="form-control" />
+            <span asp-validation-for="Model" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            <label asp-for="CoupeType"></label>
+            <select asp-for="CoupeType" class="form-control" asp-items="@Html.GetEnumSelectList<CoupeType>()"></select>
+            <span asp-validation-for="CoupeType" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            <label asp-for="Seats"></label>
+            <input asp-for="Seats" class="form-control" />
+            <span asp-validation-for="Seats" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col">
+            <label asp-for="RequiredLicenseCategory"></label>
+            <select asp-for="RequiredLicenseCategory" class="form-control" asp-items="@Html.GetEnumSelectList<LicenseCategory>()"></select>
+            <span asp-validation-for="RequiredLicenseCategory" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            <label asp-for="FuelType"></label>
+            <select asp-for="FuelType" class="form-control" asp-items="@Html.GetEnumSelectList<FuelType>()"></select>
+            <span asp-validation-for="FuelType" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            <label asp-for="Gearbox"></label>
+            <select asp-for="Gearbox" class="form-control" asp-items="@Html.GetEnumSelectList<GearBoxType>()"></select>
+            <span asp-validation-for="Gearbox" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            <label asp-for="Doors"></label>
+            <input asp-for="Doors" class="form-control" />
+            <span asp-validation-for="Doors" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col">
+            <label asp-for="YearOfManufacturing"></label>
+            <input asp-for="YearOfManufacturing" class="form-control" />
+            <span asp-validation-for="YearOfManufacturing" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            <label asp-for="FuelTankVolume"></label>
+            <input asp-for="FuelTankVolume" class="form-control" />
+            <span asp-validation-for="FuelTankVolume" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            <label asp-for="FuelConsumption"></label>
+            <input asp-for="FuelConsumption" class="form-control" />
+            <span asp-validation-for="FuelConsumption" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            <label asp-for="TrunkVolume"></label>
+            <input asp-for="TrunkVolume" class="form-control" />
+            <span asp-validation-for="TrunkVolume" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col">
+            <label asp-for="Horsepower"></label>
+            <input asp-for="Horsepower" class="form-control" />
+            <span asp-validation-for="Horsepower" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            <label asp-for="EngineVolume"></label>
+            <input asp-for="EngineVolume" class="form-control" />
+            <span asp-validation-for="EngineVolume" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            <label asp-for="PricePerDay"></label>
+            <input asp-for="PricePerDay" class="form-control" />
+            <span asp-validation-for="PricePerDay" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            <label asp-for="Pictures"></label>
+            <input type="file" asp-for="Pictures" class="form-control" multiple />
+            <span asp-validation-for="Pictures" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row justify-content-xl-center" style="margin-top:40px">
+        <input type="submit" class="btn btn-primary" />
+    </div>
+</form>

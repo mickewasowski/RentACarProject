@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+
     using RentACar.Data.Common.Models;
 
     public class Vehicle : BaseModel<string>, IDeletableEntity
@@ -28,7 +29,7 @@
         public int Seats { get; set; }
 
         [Required]
-        public char RequiredLicenseCategory { get; set; }
+        public LicenseCategory RequiredLicenseCategory { get; set; }
 
         public FuelType FuelType { get; set; }
 
@@ -58,8 +59,8 @@
         public virtual ICollection<Picture> Pictures { get; set; }
 
         // Deletable entity
-        public bool IsDeleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool IsDeleted { get ; set ; }
 
-        public DateTime? DeletedOn { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTime? DeletedOn { get ; set; }
     }
 }

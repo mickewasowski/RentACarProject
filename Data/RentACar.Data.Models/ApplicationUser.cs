@@ -20,12 +20,12 @@ namespace RentACar.Data.Models
             this.Ratings = new HashSet<Rating>();
         }
 
-        [Required]
+        //[Required]
         [MaxLength(40)]
         public string FullName { get; set; }
 
         [Range(18, 65, ErrorMessage ="Please enter a valid age number!")]
-        public int Age { get; set; }
+        public int? Age { get; set; }
 
         public string LicenseCategories { get; set; } // comma separated list of license categories
 

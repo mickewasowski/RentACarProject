@@ -162,3 +162,8 @@ C:\Users\R. Yorgova\Desktop\RentACar\Tests\RentACar.Services.Data.Tests\obj\Debu
 C:\Users\R. Yorgova\Desktop\RentACar\Tests\RentACar.Services.Data.Tests\obj\Debug\netcoreapp3.1\RentACar.Services.Data.Tests.dll
 C:\Users\R. Yorgova\Desktop\RentACar\Tests\RentACar.Services.Data.Tests\obj\Debug\netcoreapp3.1\RentACar.Services.Data.Tests.pdb
 C:\Users\R. Yorgova\Desktop\RentACar\Tests\RentACar.Services.Data.Tests\obj\Debug\netcoreapp3.1\RentACar.Services.Data.Tests.genruntimeconfig.cache
+C:\Users\R. Yorgova\Desktop\RentACar\Tests\RentACar.Services.Data.Tests\bin\Debug\netcoreapp3.1\Cloudinary.Core.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Tests\RentACar.Services.Data.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Tests\RentACar.Services.Data.Tests\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Tests\RentACar.Services.Data.Tests\bin\Debug\netcoreapp3.1\RentACar.Web.ViewModels.dll
+C:\Users\R. Yorgova\Desktop\RentACar\Tests\RentACar.Services.Data.Tests\bin\Debug\netcoreapp3.1\RentACar.Web.ViewModels.pdb

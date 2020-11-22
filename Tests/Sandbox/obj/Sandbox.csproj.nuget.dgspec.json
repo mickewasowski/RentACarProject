@@ -327,15 +327,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
               "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Data\\RentACar.Data.Common\\RentACar.Data.Common.csproj": {
                 "projectPath": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Data\\RentACar.Data.Common\\RentACar.Data.Common.csproj"
@@ -345,6 +345,9 @@
               },
               "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Services\\RentACar.Services.Mapping\\RentACar.Services.Mapping.csproj": {
                 "projectPath": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Services\\RentACar.Services.Mapping\\RentACar.Services.Mapping.csproj"
+              },
+              "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Web\\RentACar.Web.ViewModels\\RentACar.Web.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Web\\RentACar.Web.ViewModels\\RentACar.Web.ViewModels.csproj"
               }
             }
           }
@@ -356,9 +359,13 @@
         }
       },
       "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Cloudinary.Core": {
+              "target": "Package",
+              "version": "[1.31.0, )"
+            },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
               "suppressParent": "All",
@@ -377,7 +384,7 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
@@ -698,6 +705,82 @@
               "privateAssets": "none"
             },
             "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Web\\RentACar.Web.ViewModels\\RentACar.Web.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Web\\RentACar.Web.ViewModels\\RentACar.Web.ViewModels.csproj",
+        "projectName": "RentACar.Web.ViewModels",
+        "projectPath": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Web\\RentACar.Web.ViewModels\\RentACar.Web.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\R. Yorgova\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Web\\RentACar.Web.ViewModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\R. Yorgova\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Data\\RentACar.Data.Models\\RentACar.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Data\\RentACar.Data.Models\\RentACar.Data.Models.csproj"
+              },
+              "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Services\\RentACar.Services.Mapping\\RentACar.Services.Mapping.csproj": {
+                "projectPath": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Services\\RentACar.Services.Mapping\\RentACar.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
               "privateAssets": "all"
             }
           },

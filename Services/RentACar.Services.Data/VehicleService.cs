@@ -29,7 +29,7 @@
 
         public T GetById<T>(string id)
         {
-            var vehicle = this.vehicleRepository.All().Where(x => x.Id == id).To<T>().FirstOrDefault();
+            var vehicle = this.vehicleRepository.AllAsNoTracking().Where(x => x.Id == id).To<T>().FirstOrDefault();
 
             return vehicle;
         }

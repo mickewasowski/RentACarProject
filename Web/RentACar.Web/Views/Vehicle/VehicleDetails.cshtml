@@ -5,3 +5,52 @@
     this.ViewData["Title"] = "Vehicle Details";
 }
 
+<div class="container">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="@Model.Picture" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Brand</h5>
+            <h6 class="card-title">@Model.Model</h6>
+        </div>
+        <ul class="list-group list-group-flush">
+            <label asp-for="@Model.CoupeType"></label>
+            <li class="list-group-item">@Model.CoupeType</li>
+
+            <label asp-for="@Model.YearOfManufacturing"></label>
+            <li class="list-group-item">@Model.YearOfManufacturing</li>
+
+            <label asp-for="@Model.RequiredLicenseCategory"></label>
+            <li class="list-group-item">@Model.RequiredLicenseCategory</li>
+
+            <label asp-for="@Model.Seats"></label>
+            <li class="list-group-item">@Model.Seats</li>
+
+            <label asp-for="@Model.Doors"></label>
+            <li class="list-group-item">@Model.Doors</li>
+
+            <label asp-for="@Model.FuelType">Fuel Type</label>
+            <li class="list-group-item">@Model.FuelType</li>
+
+            <label asp-for="@Model.FuelTankVolume">Fuel Tank Volume</label>
+            <li class="list-group-item">@Model.FuelTankVolume</li>
+
+            <label asp-for="@Model.FuelConsumption">Fuel Consumption</label>
+            <li class="list-group-item">@Model.FuelConsumption</li>
+
+            <label asp-for="@Model.EngineVolume">Engine Volume</label>
+            <li class="list-group-item">@Model.EngineVolume</li>
+
+            <label asp-for="@Model.Horsepower"></label>
+            <li class="list-group-item">@Model.Horsepower</li>
+
+            <label asp-for="@Model.Gearbox"></label>
+            <li class="list-group-item">@Model.Gearbox</li>
+
+            <label asp-for="@Model.TrunkVolume">Trunk Volume</label>
+            <li class="list-group-item">@Model.TrunkVolume</li>
+
+            <label asp-for="@Model.PricePerDay">Price per day</label>
+            <li class="list-group-item">@Model.PricePerDay</li>
+        </ul>
+    </div>
+</div>

@@ -1,8 +1,12 @@
 ﻿namespace RentACar.Services.Data
 {
-    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Threading.Tasks;
 
     using CloudinaryDotNet;
+    using CloudinaryDotNet.Actions;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.Extensions.Configuration;
 
     public class CloudinaryService : ICloudinaryService
@@ -14,22 +18,44 @@
             this.configuration = iConfig;
         }
 
-        public void UploadImage()
+        public async Task<ICollection<string>> UploadImage(ICollection<IFormFile> pictures)
         {
-            throw new NotImplementedException();
-        }
-
-        public void AuthenticateAccount()
-        {
-            // CLOUDINARY_URL=cloudinary://265295315814647:6K5JSLtUS8smA9YpM4rKA1Q1utU@mickewasowski
-
             Account account = new Account(
                 this.configuration["Cloudinary:CloudName"],
                 this.configuration["Cloudinary:APIKey"],
                 this.configuration["Cloudinary:APISecret"]);
 
             Cloudinary cloudinary = new Cloudinary(account);
-        }
 
+            var imageURLs = new List<string>();
+
+            foreach (var pic in pictures)
+            {
+                var convertedImage = new byte[0];
+
+                using (var ms = new MemoryStream())
+                {
+                    pic.CopyTo(ms);
+                    var fileBytes = ms.ToArray();
+
+                    convertedImage = fileBytes;
+                }
+
+                Stream stream = new MemoryStream(convertedImage);
+
+                var uploadImage = new ImageUploadParams()
+                {
+                    File = new FileDescription(pic.FileName, stream),
+                };
+
+                var uploadResult = await cloudinary.UploadAsync(uploadImage);
+
+                var imageURL = uploadResult.Uri.OriginalString;
+
+                imageURLs.Add(imageURL);
+            }
+
+            return imageURLs;
+        }
     }
 }

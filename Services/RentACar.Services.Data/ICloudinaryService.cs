@@ -1,11 +1,12 @@
 ﻿namespace RentACar.Services.Data
 {
-    using System;
     using System.Collections.Generic;
-    using System.Text;
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Http;
 
     public interface ICloudinaryService
     {
-        void UploadImage();
+        Task<ICollection<string>> UploadImage(ICollection<IFormFile> pictures);
     }
 }

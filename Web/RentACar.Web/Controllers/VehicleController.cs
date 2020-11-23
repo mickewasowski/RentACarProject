@@ -12,16 +12,27 @@
     {
         private readonly IVehicleService vehicleService;
         private readonly IDeletableEntityRepository<Vehicle> vehicleRepository;
+        private readonly ICloudinaryService cloudinaryService;
 
-        public VehicleController(IVehicleService vehicleService, IDeletableEntityRepository<Vehicle> vehicleRepository)
+        public VehicleController(IVehicleService vehicleService, IDeletableEntityRepository<Vehicle> vehicleRepository, ICloudinaryService cloudinaryService)
         {
             this.vehicleService = vehicleService;
             this.vehicleRepository = vehicleRepository;
+            this.cloudinaryService = cloudinaryService;
         }
 
         public IActionResult AddVehicle()
         {
             return this.View();
+        }
+
+        [HttpPost]
+        public IActionResult AddVehicle(AddVehicleViewModel input)
+        {
+            var pictures = input.Pictures.ToList();
+            var cloudinaryResult = this.cloudinaryService.UploadImage(pictures);
+
+            return this.Redirect("AllVehicles");
         }
 
         public IActionResult AllVehicles()

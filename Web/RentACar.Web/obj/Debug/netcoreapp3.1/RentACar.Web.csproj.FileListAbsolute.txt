@@ -465,3 +465,4 @@ C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\netcoreapp3.1\Ra
 C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\VehicleDetails.cshtml.g.cs
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\netcoreapp3.1\Razor\Views\Facility\AddFacility.cshtml.g.cs

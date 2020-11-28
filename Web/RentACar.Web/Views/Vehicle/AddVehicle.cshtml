@@ -3,6 +3,7 @@
 @model RentACar.Web.ViewModels.Vehicle.AddVehicleViewModel
 @{
     this.ViewData["Title"] = "Add new vehicle";
+    var facilities = Model.Facilities.Select(x => new SelectListItem(x.Name, x.Id.ToString()));
 }
 
 <div class="align-content-center">
@@ -14,6 +15,12 @@
 <form method="post"
       enctype="multipart/form-data">
     <div class="row">
+        <div class="form-group col">
+            <label asp-for="FacilityId"></label>
+            <select asp-for="FacilityId" asp-items="facilities" class="form-control"></select>
+            <span asp-validation-for="FacilityId" class="text-danger"></span>
+        </div>
+
         <div class="form-group col">
             <label asp-for="Brand"></label>
             <input asp-for="Brand" class="form-control" />

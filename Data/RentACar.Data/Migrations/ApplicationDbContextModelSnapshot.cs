@@ -706,7 +706,7 @@ namespace RentACar.Data.Migrations
 
             modelBuilder.Entity("RentACar.Data.Models.Vehicle", b =>
                 {
-                    b.HasOne("RentACar.Data.Models.Facility", null)
+                    b.HasOne("RentACar.Data.Models.Facility", "Facility")
                         .WithMany("Vehicles")
                         .HasForeignKey("FacilityId");
                 });

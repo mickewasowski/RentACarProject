@@ -1,38 +1,41 @@
 ﻿namespace RentACar.Web.Controllers
 {
-    using Microsoft.AspNetCore.Mvc;
-    using RentACar.Data.Common.Repositories;
-    using RentACar.Data.Models;
-    using RentACar.Services.Data;
-    using RentACar.Web.ViewModels.Vehicle;
     using System.Linq;
     using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc;
+    using RentACar.Services.Data;
+    using RentACar.Web.ViewModels.Facility;
+    using RentACar.Web.ViewModels.Vehicle;
 
     public class VehicleController : Controller
     {
         private readonly IVehicleService vehicleService;
-        private readonly IDeletableEntityRepository<Vehicle> vehicleRepository;
         private readonly ICloudinaryService cloudinaryService;
+        private readonly IFacilityService facilityService;
 
-        public VehicleController(IVehicleService vehicleService, IDeletableEntityRepository<Vehicle> vehicleRepository, ICloudinaryService cloudinaryService)
+        public VehicleController(IVehicleService vehicleService, ICloudinaryService cloudinaryService, IFacilityService facilityService)
         {
             this.vehicleService = vehicleService;
-            this.vehicleRepository = vehicleRepository;
             this.cloudinaryService = cloudinaryService;
+            this.facilityService = facilityService;
         }
 
         public IActionResult AddVehicle()
         {
-            return this.View();
+            var facilities = this.facilityService.GetAll<FacilityDropDownViewModel>();
+            var viewModel = new AddVehicleViewModel
+            {
+                Facilities = facilities,
+            };
+            return this.View(viewModel);
         }
 
         [HttpPost]
-        public IActionResult AddVehicle(AddVehicleViewModel input)
+        public async Task<IActionResult> AddVehicle(AddVehicleViewModel input)
         {
-            var pictures = input.Pictures.ToList();
-            var cloudinaryResult = this.cloudinaryService.UploadImage(pictures);
+            var vehicleID = await this.vehicleService.AddVehicle(input);
 
-            return this.Redirect("AllVehicles");
+            return this.Redirect($"VehicleDetails/{vehicleID}");
         }
 
         public IActionResult AllVehicles()
@@ -46,8 +49,6 @@
 
         public IActionResult VehicleDetails(string id)
         {
-            //test comment
-
             var vehicle = this.vehicleService.GetById<VehicleDetailsViewModel>(id);
 
             return this.View(vehicle);

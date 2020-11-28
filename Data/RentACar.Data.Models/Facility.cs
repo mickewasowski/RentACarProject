@@ -26,6 +26,9 @@
         [MaxLength(60)]
         public string Contacts { get; set; } // should it be a single string ??
 
+        public string CityId { get; set; }
+        public City City { get; set; }
+
         public virtual ICollection<Vehicle> Vehicles { get; set; }
 
         public bool IsDeleted { get ; set ; }

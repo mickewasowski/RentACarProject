@@ -6,9 +6,16 @@
 
     using Microsoft.AspNetCore.Http;
     using RentACar.Data.Models;
+    using RentACar.Web.ViewModels.CustomValidation;
+    using RentACar.Web.ViewModels.Facility;
 
     public class AddVehicleViewModel
     {
+        [Display(Name = "Facility")]
+        public string FacilityId { get; set; }
+
+        public IEnumerable<FacilityDropDownViewModel> Facilities { get; set; }
+
         [Required]
         [MaxLength(25)]
         public string Brand { get; set; }
@@ -32,6 +39,7 @@
         [Range(2, 7, ErrorMessage = "Please enter a valid door number!")]
         public int Doors { get; set; }
 
+        [RangeUntilCurrentYearAttribute(2010, ErrorMessage = "You must register a car manufactured from 2010 and later!")]
         public int YearOfManufacturing { get; set; }
 
         public int FuelTankVolume { get; set; }

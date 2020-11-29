@@ -1,5 +1,6 @@
 ﻿@using RentACar.Data.Models;
 
+
 @model RentACar.Web.ViewModels.Vehicle.VehicleDetailsViewModel
 @{
     this.ViewData["Title"] = "Vehicle Details";
@@ -7,6 +8,7 @@
 
 <div class="container">
     <div class="card" style="width: 18rem;">
+        @*<partial name="ImageSliderPartial" model="_Views_Images_ImageSliderPartial" />*@
         <img class="card-img-top" src="@Model.Picture" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">@Model.Brand</h5>

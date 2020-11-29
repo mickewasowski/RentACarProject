@@ -7,20 +7,28 @@
 
     using Microsoft.AspNetCore.Mvc;
     using RentACar.Services.Data;
+    using RentACar.Web.ViewModels.City;
     using RentACar.Web.ViewModels.Facility;
 
     public class FacilityController : Controller
     {
         private readonly IFacilityService facilityService;
+        private readonly ICityService cityService;
 
-        public FacilityController(IFacilityService facilityService)
+        public FacilityController(IFacilityService facilityService, ICityService cityService)
         {
             this.facilityService = facilityService;
+            this.cityService = cityService;
         }
 
         public IActionResult AddFacility()
         {
-            return this.View();
+            var cities = this.cityService.GetAll<CityDropDownViewModel>();
+            var viewModel = new AddNewFacilityViewModel
+            {
+                Cities = cities,
+            };
+            return this.View(viewModel);
         }
 
         [HttpPost]

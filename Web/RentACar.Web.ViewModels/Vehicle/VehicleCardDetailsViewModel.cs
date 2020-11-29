@@ -5,6 +5,7 @@
     using AutoMapper;
     using RentACar.Data.Models;
     using RentACar.Services.Mapping;
+    using RentACar.Web.ViewModels.Image;
 
     public class VehicleCardDetailsViewModel : IMapFrom<Vehicle>, IMapTo<Vehicle>, IHaveCustomMappings
     {
@@ -24,6 +25,8 @@
         public decimal PricePerDay { get; set; }
 
         public string Picture { get; set; }
+
+        //public GalleryViewModel Images { get; set; }
 
         public void CreateMappings(IProfileExpression configuration)
         {

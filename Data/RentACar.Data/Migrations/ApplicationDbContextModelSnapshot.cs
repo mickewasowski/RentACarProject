@@ -655,7 +655,7 @@ namespace RentACar.Data.Migrations
 
             modelBuilder.Entity("RentACar.Data.Models.Facility", b =>
                 {
-                    b.HasOne("RentACar.Data.Models.City", null)
+                    b.HasOne("RentACar.Data.Models.City", "City")
                         .WithMany("Facilities")
                         .HasForeignKey("CityId");
                 });

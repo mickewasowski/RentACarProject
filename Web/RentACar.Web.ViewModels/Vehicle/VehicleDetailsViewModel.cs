@@ -6,8 +6,9 @@
     using AutoMapper;
     using RentACar.Data.Models;
     using RentACar.Services.Mapping;
+    using RentACar.Web.ViewModels.Image;
 
-    public class VehicleDetailsViewModel : IMapFrom<Vehicle>, IMapTo<Vehicle>, IHaveCustomMappings
+    public class VehicleDetailsViewModel /*: IMapFrom<Vehicle>*/
     {
         public string Id { get; set; }
 
@@ -43,15 +44,27 @@
 
         //public IEnumerable<Rating> Ratings { get; set; }
 
-        public string Picture { get; set; }
+        //public GalleryViewModel Images { get; set; }
 
-        public void CreateMappings(IProfileExpression configuration)
-        {
-            configuration.CreateMap<Vehicle, VehicleDetailsViewModel>()
-                .ForMember(x => x.Picture, options =>
-                {
-                    options.MapFrom(p => p.Pictures.FirstOrDefault().URL);
-                });
-        }
+        public IEnumerable<CarImagesViewModel> Images { get; set; }
+
+        //public void CreateMappings(IProfileExpression configuration)
+        //{
+        //    //configuration.CreateMap<Vehicle, VehicleDetailsViewModel>()
+        //    //    .ForMember(x => x.Picture, options =>
+        //    //    {
+        //    //        options.MapFrom(p => p.Pictures.FirstOrDefault().URL);
+        //    //    });
+
+        //    //configuration.CreateMap<Picture, CarImagesViewModel>()
+        //    //    .ForMember(x => x.URL, options =>
+        //    //    {
+        //    //        options.MapFrom(p => p.URL);
+        //    //    })
+        //    //    .ForMember(y => y.Id, opt =>
+        //    //    {
+        //    //        opt.MapFrom(p => p.Id);
+        //    //    });
+        //}
     }
 }

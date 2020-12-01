@@ -1,5 +1,6 @@
 ﻿namespace RentACar.Web.ViewModels.Vehicle
 {
+    using System.Collections.Generic;
     using System.Linq;
 
     using AutoMapper;
@@ -10,6 +11,7 @@
     public class VehicleCardDetailsViewModel : IMapFrom<Vehicle>, IMapTo<Vehicle>, IHaveCustomMappings
     {
         public string Id { get; set; }
+
         public string Brand { get; set; }
 
         public string Model { get; set; }
@@ -26,7 +28,7 @@
 
         public string Picture { get; set; }
 
-        //public GalleryViewModel Images { get; set; }
+        public IEnumerable<CarImagesViewModel> Images { get; set; }
 
         public void CreateMappings(IProfileExpression configuration)
         {

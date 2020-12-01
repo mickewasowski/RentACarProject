@@ -6,10 +6,32 @@
     this.ViewData["Title"] = "Vehicle Details";
 }
 
-<div class="container">
+<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+<script type="text/javascript" src="engine1/jquery.js"></script>
+
+<div class="flex-wrap">
+
     <div class="card" style="width: 18rem;">
-        @*<partial name="ImageSliderPartial" model="_Views_Images_ImageSliderPartial" />*@
-        <img class="card-img-top" src="@Model.Picture" alt="Card image cap">
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    @foreach (var pic in @Model.Images)
+                    {
+                        <div class="carousel-item active" id="@pic.Id">
+                            <img class="d-block w-100" src="@pic.URL" id="@pic.Id">
+                        </div>
+                    }
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
         <div class="card-body">
             <h5 class="card-title">@Model.Brand</h5>
             <h6 class="card-title">@Model.Model</h6>

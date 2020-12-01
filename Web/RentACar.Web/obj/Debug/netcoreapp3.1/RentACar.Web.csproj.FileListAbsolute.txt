@@ -468,3 +468,4 @@ C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\netcoreapp3.1\Ra
 C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\netcoreapp3.1\Razor\Views\Facility\AddFacility.cshtml.g.cs
 C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\netcoreapp3.1\Razor\Views\Images\ImageSliderPartial.cshtml.g.cs
 C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\netcoreapp3.1\Razor\Views\City\AddCity.cshtml.g.cs
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\netcoreapp3.1\Razor\Views\City\AllCities.cshtml.g.cs

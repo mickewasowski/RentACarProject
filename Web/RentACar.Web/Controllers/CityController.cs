@@ -20,7 +20,7 @@
 
         public IActionResult AddCity()
         {
-            return View();
+            return this.View();
         }
 
         [HttpPost]
@@ -29,6 +29,22 @@
             var cityID = await this.cityService.AddCity(input);
 
             return this.View();
+        }
+
+        public IActionResult AllCities()
+        {
+            var allCities = this.cityService.GetAll<CityCardViewModel>();
+
+            var model = new AllCitiesViewModel { Cities = allCities };
+
+            return this.View(model);
+        }
+
+        public IActionResult Details(string id)
+        {
+            // return all facilities for this city
+
+            return View();
         }
     }
 }

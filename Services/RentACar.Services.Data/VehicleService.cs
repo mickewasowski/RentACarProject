@@ -6,6 +6,7 @@
     using RentACar.Data.Common.Repositories;
     using RentACar.Data.Models;
     using RentACar.Services.Mapping;
+    using RentACar.Web.ViewModels.Image;
     using RentACar.Web.ViewModels.Vehicle;
 
     public class VehicleService : IVehicleService
@@ -61,6 +62,14 @@
             return vehicleID;
         }
 
+        public IEnumerable<T> GetAllPicturesById<T>(string id)
+        {
+            var pictures = this.vehicleRepository.AllAsNoTracking()
+                .Where(x => x.Id == id).Select(z => z.Pictures).To<T>().ToList();
+
+            return pictures;
+        }
+
         public IEnumerable<T> GetAllVehicles<T>()
         {
             var vehicles = this.vehicleRepository.AllAsNoTracking()
@@ -72,11 +81,53 @@
             return vehicles;
         }
 
-        public T GetById<T>(string id)
+        public VehicleDetailsViewModel GetById(string id)
         {
-            var vehicle = this.vehicleRepository.AllAsNoTracking().Where(x => x.Id == id).To<T>().FirstOrDefault();
+            var vehicle = this.vehicleRepository
+                .AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .FirstOrDefault();
 
-            return vehicle;
+            var vehicleImages = this.vehicleRepository.AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .Select(x => x.Pictures.ToList())
+                .FirstOrDefault();
+
+            var imagesList = new List<CarImagesViewModel>();
+
+            foreach (var pic in vehicleImages)
+            {
+                var converted = new CarImagesViewModel
+                {
+                    Id = pic.Id,
+                    URL = pic.URL,
+                };
+
+                imagesList.Add(converted);
+            }
+
+            var mapped = new VehicleDetailsViewModel
+            {
+                Id = vehicle.Id,
+                Brand = vehicle.Brand,
+                Model = vehicle.Model,
+                CoupeType = vehicle.CoupeType,
+                Seats = vehicle.Seats,
+                RequiredLicenseCategory = vehicle.RequiredLicenseCategory,
+                FuelType = vehicle.FuelType,
+                Gearbox = vehicle.Gearbox,
+                Doors = vehicle.Doors,
+                YearOfManufacturing = vehicle.YearOfManufacturing,
+                FuelTankVolume = vehicle.FuelTankVolume,
+                FuelConsumption = vehicle.FuelConsumption,
+                TrunkVolume = vehicle.TrunkVolume,
+                Horsepower = vehicle.Horsepower,
+                EngineVolume = vehicle.EngineVolume,
+                PricePerDay = vehicle.PricePerDay,
+                Images = imagesList,
+            };
+
+            return mapped;
         }
     }
 }

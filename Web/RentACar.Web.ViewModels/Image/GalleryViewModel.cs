@@ -4,6 +4,6 @@
 
     public class GalleryViewModel
     {
-        public IEnumerable<CarImagesViewModel> Images { get; set; }
+        public ICollection<CarImagesViewModel> Images { get; set; }
     }
 }

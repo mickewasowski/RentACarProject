@@ -5,6 +5,7 @@
     using Microsoft.AspNetCore.Mvc;
     using RentACar.Services.Data;
     using RentACar.Web.ViewModels.Facility;
+    using RentACar.Web.ViewModels.Image;
     using RentACar.Web.ViewModels.Vehicle;
 
     public class VehicleController : Controller
@@ -49,7 +50,17 @@
 
         public IActionResult VehicleDetails(string id)
         {
-            var vehicle = this.vehicleService.GetById<VehicleDetailsViewModel>(id);
+            //var images = this.vehicleService.GetAllPicturesById<CarImagesViewModel>(id);
+
+            var vehicle = this.vehicleService.GetById(id);
+
+            //vehicle.Images = images;
+
+            //vehicle.Images = new VehicleDetailsViewModel { Images = images };
+
+            // fix the error/warning ^^^
+
+            // do something to map the list of pictures ???
 
             return this.View(vehicle);
         }

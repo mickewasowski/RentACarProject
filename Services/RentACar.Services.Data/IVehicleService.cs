@@ -8,7 +8,9 @@
     {
         IEnumerable<T> GetAllVehicles<T>();
 
-        T GetById<T>(string id);
+        VehicleDetailsViewModel GetById(string id);
+
+        IEnumerable<T> GetAllPicturesById<T>(string id);
 
         Task<string> AddVehicle(AddVehicleViewModel input);
     }

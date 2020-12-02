@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "bEOKdtvHigUjoik1q7XfKOZmxVDqgrMiS5SSJXq2eUnakg2h9ZLfPhPNuDbbrGgvI5giLgGXwap76osw9amc+A==",
+  "dgSpecHash": "2RLjVA1j0NVoqhqSVJSDNy37hc+XVM73zgrhZ3k21ehlToDbIdxpnWFpQdF680ZtXjETzH5s8hz28WP8FD9PAA==",
   "success": true,
   "projectFilePath": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Data\\RentACar.Data.Common\\RentACar.Data.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\R. Yorgova\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
     "C:\\Users\\R. Yorgova\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512",
-    "C:\\Users\\R. Yorgova\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+    "C:\\Users\\R. Yorgova\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

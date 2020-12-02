@@ -42,4 +42,8 @@
     <ProjectReference Include="..\RentACar.Web.Infrastructure\RentACar.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\RentACar.Web.ViewModels\RentACar.Web.ViewModels.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Images\" />
+  </ItemGroup>
 </Project>

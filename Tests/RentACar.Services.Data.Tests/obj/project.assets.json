@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
+    "net5.0": {
       "AutoMapper/10.1.1": {
         "type": "package",
         "dependencies": {
@@ -81,10 +81,10 @@
           "System.IO.Pipelines": "5.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {}
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {}
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {}
         }
       },
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore/3.1.9": {
@@ -2684,7 +2684,7 @@
       },
       "RentACar.Data/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
+        "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9",
@@ -2729,7 +2729,7 @@
       },
       "RentACar.Services.Data/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
+        "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Cloudinary.Core": "1.31.0",
           "RentACar.Data.Common": "1.0.0",
@@ -8684,7 +8684,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
+    "net5.0": [
       "Microsoft.EntityFrameworkCore.InMemory >= 3.1.9",
       "Microsoft.NET.Test.Sdk >= 16.7.1",
       "Moq >= 4.14.7",
@@ -8716,15 +8716,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "net5.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "projectReferences": {
             "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Data\\RentACar.Data\\RentACar.Data.csproj": {
               "projectPath": "C:\\Users\\R. Yorgova\\Desktop\\RentACar\\Data\\RentACar.Data\\RentACar.Data.csproj"
@@ -8742,8 +8742,8 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
+      "net5.0": {
+        "targetAlias": "net5.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",

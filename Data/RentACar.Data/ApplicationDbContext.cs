@@ -27,8 +27,6 @@
 
         public DbSet<ApplicationRole> Roles { get; set; }
 
-        public DbSet<City> Cities { get; set; }
-
         public DbSet<Facility> Facilities { get; set; }
 
         public DbSet<Offer> Offers { get; set; }

@@ -15,21 +15,21 @@
                 return;
             }
 
-            var cities = dbContext.Cities.ToList();
-
-            cities[0].Facilities.Add(new Facility
+            dbContext.Facilities.Add(new Facility
             {
                 Name = "Sofia Facility",
                 Address = "bul. Cherni Vrah 15",
                 Contacts = "Asen Ignatov 0896784321",
+                CityName = Cities.Sofia,
                 IsDeleted = false,
             });
 
-            cities[1].Facilities.Add(new Facility
+            dbContext.Facilities.Add(new Facility
             {
                 Name = "Veliko Tarnovo Facility",
                 Address = "bul. Bulgaria 4",
                 Contacts = "Ivan Petrov",
+                CityName = Cities.VelikoTarnovo,
                 IsDeleted = false,
             });
 

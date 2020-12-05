@@ -27,7 +27,6 @@
                           {
                               new RolesSeeder(),
                               new SettingsSeeder(),
-                              new CitiesSeeder(),
                               new FacilitiesSeeder(),
                               new VehiclesSeeder(),
                           };

@@ -24,8 +24,4 @@
     <ProjectReference Include="..\..\Services\RentACar.Services.Mapping\RentACar.Services.Mapping.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="CustomValidation\" />
-  </ItemGroup>
-
 </Project>

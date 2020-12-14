@@ -26,6 +26,8 @@
 
         public decimal PricePerDay { get; set; }
 
+        public bool IsBooked { get; set; }
+
         public string Picture { get; set; }
 
         public IEnumerable<CarImagesViewModel> Images { get; set; }

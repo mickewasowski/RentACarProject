@@ -54,6 +54,8 @@
                     }).AddRazorRuntimeCompilation();
             services.AddRazorPages();
 
+            services.AddDatabaseDeveloperPageExceptionFilter(); 
+
             services.AddSingleton(this.configuration);
 
             // Data repositories
@@ -70,8 +72,6 @@
             services.AddTransient<IVehicleService, VehicleService>();
 
             services.AddTransient<IFacilityService, FacilityService>();
-
-            services.AddTransient<ICityService, CityService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -90,7 +90,7 @@
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
+                app.UseMigrationsEndPoint();
             }
             else
             {

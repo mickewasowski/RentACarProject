@@ -6,57 +6,85 @@
     this.ViewData["Title"] = "Vehicle Details";
 }
 
+@*float:left;*@
+<div class="wrapper" style="width: auto;margin:auto;">
 
-<div class="flex-wrap">
-
-    <div class="card" style="width: 18rem;">
-
-        <partial name="_ImageSliderPartial" model="@Model" />
-
-        <div class="card-body">
-            <h5 class="card-title">@Model.Brand</h5>
-            <h6 class="card-title">@Model.Model</h6>
+    <partial name="_ImageSliderPartial" model="@Model" />
+    <div class="right" style="float:right;width:400px;">
+        <div class="card-body" style="padding: 0px 16px;display:flex;justify-content:center;">
+            <h5 class="card-title" style="padding: 0px 20px;">@Model.Brand</h5>
+            <h6 class="card-title" style="margin-top: 3px;">@Model.Model</h6>
         </div>
-        <ul class="list-group list-group-flush">
-            <label asp-for="@Model.CoupeType"></label>
-            <li class="list-group-item">@Model.CoupeType</li>
+        <div class="wrapper" style="display:flex;">
+            <div class="col-md-6" style="height:auto;">
+                <div>
+                    <label asp-for="@Model.CoupeType">Coupe type: @Model.CoupeType</label>
+                </div>
 
-            <label asp-for="@Model.YearOfManufacturing"></label>
-            <li class="list-group-item">@Model.YearOfManufacturing</li>
+                <div>
+                    <label asp-for="@Model.YearOfManufacturing">Year of manufacturing: @Model.YearOfManufacturing</label>
+                </div>
 
-            <label asp-for="@Model.RequiredLicenseCategory"></label>
-            <li class="list-group-item">@Model.RequiredLicenseCategory</li>
+                <div>
+                    <label asp-for="@Model.RequiredLicenseCategory">Required License: @Model.RequiredLicenseCategory</label>
+                </div>
 
-            <label asp-for="@Model.Seats"></label>
-            <li class="list-group-item">@Model.Seats</li>
+                <div>
+                    <label asp-for="@Model.Seats">Seats: @Model.Seats</label>
+                </div>
 
-            <label asp-for="@Model.Doors"></label>
-            <li class="list-group-item">@Model.Doors</li>
+                <div>
+                    <label asp-for="@Model.Doors">Doors: @Model.Doors</label>
+                </div>
 
-            <label asp-for="@Model.FuelType">Fuel Type</label>
-            <li class="list-group-item">@Model.FuelType</li>
+                <div>
+                    <label asp-for="@Model.FuelType">Fuel Type: @Model.FuelType</label>
+                </div>
+            </div>
 
-            <label asp-for="@Model.FuelTankVolume">Fuel Tank Volume</label>
-            <li class="list-group-item">@Model.FuelTankVolume</li>
+            <div class="col-md-6">
+                <div>
+                    <label asp-for="@Model.FuelTankVolume">Fuel Tank Volume: @Model.FuelTankVolume l</label>
+                </div>
 
-            <label asp-for="@Model.FuelConsumption">Fuel Consumption</label>
-            <li class="list-group-item">@Model.FuelConsumption</li>
+                <div>
+                    <label asp-for="@Model.FuelConsumption">Fuel Consumption: @Model.FuelConsumption l/100km</label>
+                </div>
 
-            <label asp-for="@Model.EngineVolume">Engine Volume</label>
-            <li class="list-group-item">@Model.EngineVolume</li>
+                <div>
+                    <label asp-for="@Model.EngineVolume">Engine Volume: @Model.EngineVolume l</label>
+                </div>
 
-            <label asp-for="@Model.Horsepower"></label>
-            <li class="list-group-item">@Model.Horsepower</li>
+                <div>
+                    <label asp-for="@Model.Horsepower">Horsepower: @Model.Horsepower</label>
+                </div>
 
-            <label asp-for="@Model.Gearbox"></label>
-            <li class="list-group-item">@Model.Gearbox</li>
+                <div>
+                    <label asp-for="@Model.Gearbox">Gearbox: @Model.Gearbox</label>
+                </div>
 
-            <label asp-for="@Model.TrunkVolume">Trunk Volume</label>
-            <li class="list-group-item">@Model.TrunkVolume</li>
-
-            <label asp-for="@Model.PricePerDay">Price per day</label>
-            <li class="list-group-item">@Model.PricePerDay</li>
-        </ul>
+                <div>
+                    <label asp-for="@Model.TrunkVolume">Trunk Volume: @Model.TrunkVolume l</label>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;margin-top: 5px;font-weight: bold;font-size: large;">
+            <label asp-for="@Model.PricePerDay">Price per day: @Model.PricePerDay €</label>
+        </div>
+    </div>
+    <div style="float: right;margin: auto;margin-top: 264px;margin-right: 15px;">
+        @if (Model.IsBooked)
+        {
+            <a style="width: 60px;background-color: red;color: white;border-radius: 8px;border: none;text-align: center;padding: 3px 5px;">
+                Booked
+            </a>
+        }
+        else
+        {
+            <a href="/Offer/CreateOffer/@Model.Id" style="width:80px;background-color:green;color:white;border-radius:8px;border:none;text-align:center;padding:3px 5px;">
+                Book Now
+            </a>
+        }
     </div>
 </div>
 

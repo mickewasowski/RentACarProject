@@ -1,0 +1,28 @@
+﻿@model RentACar.Web.ViewModels.Offer.CreateOfferViewModel
+
+
+<form method="post" enctype="multipart/form-data">
+    <div>
+        <label asp-for="StartDate"></label>
+        <input asp-for="StartDate" class="form-control" type="date" />
+        <span asp-validation-for="StartDate" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="EndDate"></label>
+        <input asp-for="EndDate" class="form-control" type="date" />
+        <span asp-validation-for="EndDate" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="VehicleDetails.PricePerDay"></label>
+        <input asp-for="VehicleDetails.PricePerDay" class="form-control" disabled />
+    </div>
+
+    <article>
+        <h6>Discounts:</h6>
+        <p>-10%: more than 7 days</p>
+        <p>-20%: more than 30days</p>
+    </article>
+
+    <input type="submit" value="Submit request">
+</form>

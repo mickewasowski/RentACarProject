@@ -42,20 +42,17 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Cities
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="City" asp-action="AddCity">Add City</a>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="City" asp-action="AllCities">All Cities</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Administration" asp-controller="Vehicles" asp-action="Index">Admin Vehicles</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

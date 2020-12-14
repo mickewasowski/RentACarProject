@@ -10,117 +10,104 @@
     <h1>Add New Vehicle</h1>
 </div>
 
+<form method="post" enctype="multipart/form-data" style="-webkit-box-shadow: 9px 7px 28px 5px rgba(0,0,0,0.76); -moz-box-shadow: 9px 7px 28px 5px rgba(0,0,0,0.76); box-shadow: 9px 7px 28px 5px rgba(0,0,0,0.76); width: fit-content; color: white; margin: auto; margin-top: 25px; padding-left: 20px; padding-right: 20px; padding-bottom: 20px; border-radius: 10px; background: rgb(170,54,115); background: linear-gradient(90deg, rgba(170,54,115,1) 0%, rgba(183,82,77,1) 35%, rgba(210,129,19,1) 100%);">
+    <div class="row" style="display: inline;height: fit-content;">
+        <label asp-for="FacilityId" style="padding-left: 15px;margin-left: 42px;margin-top: 25px;"></label>
+        <select asp-for="FacilityId" asp-items="facilities" class="form-control"></select>
+        <span asp-validation-for="FacilityId" class="text-danger"></span>
+    </div>
+    <div class="container-md" style="display:flex;">
+        <div class="col-md-6" style="width:200px;">
+            <div class="form-group col">
+                <label asp-for="Brand"></label>
+                <input asp-for="Brand" class="form-control" />
+                <span asp-validation-for="Brand" class="text-danger" style="color: rgb(255, 3, 3);background-color: wheat;padding-top: 0px;border-radius: 3px;"></span>
+            </div>
 
-@*class="col-md-4 offset-md-3" it was in the form tag *@
-<form method="post"
-      enctype="multipart/form-data">
-    <div class="row">
-        <div class="form-group col">
-            <label asp-for="FacilityId"></label>
-            <select asp-for="FacilityId" asp-items="facilities" class="form-control"></select>
-            <span asp-validation-for="FacilityId" class="text-danger"></span>
+            <div class="form-group col">
+                <label asp-for="Model"></label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger" style="color: rgb(255, 3, 3);background-color: wheat;padding-top: 0px;border-radius: 3px;"></span>
+            </div>
+
+            <div class="form-group col">
+                <label asp-for="Seats"></label>
+                <input asp-for="Seats" class="form-control" />
+                <span asp-validation-for="Seats" class="text-danger" style="color: rgb(255, 3, 3);background-color: wheat;padding-top: 0px;border-radius: 3px;"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="Doors"></label>
+                <input asp-for="Doors" class="form-control" />
+                <span asp-validation-for="Doors" class="text-danger" style="color: rgb(255, 3, 3);background-color: wheat;padding-top: 0px;border-radius: 3px;"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="YearOfManufacturing">Year of manufacturing</label>
+                <input asp-for="YearOfManufacturing" class="form-control" />
+                <span asp-validation-for="YearOfManufacturing" class="text-danger" style="color: rgb(255, 3, 3);background-color: wheat;padding-top: 0px;border-radius: 3px;"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="CoupeType">Coupe type</label>
+                <select asp-for="CoupeType" class="form-control" asp-items="@Html.GetEnumSelectList<CoupeType>()"></select>
+                <span asp-validation-for="CoupeType" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="RequiredLicenseCategory">Required License</label>
+                <select asp-for="RequiredLicenseCategory" class="form-control" asp-items="@Html.GetEnumSelectList<LicenseCategory>()"></select>
+                <span asp-validation-for="RequiredLicenseCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="FuelType">Fuel type</label>
+                <select asp-for="FuelType" class="form-control" asp-items="@Html.GetEnumSelectList<FuelType>()"></select>
+                <span asp-validation-for="FuelType" class="text-danger"></span>
+            </div>
         </div>
+        <div class="col-md-6">
+            <div class="form-group col">
+                <label asp-for="Gearbox"></label>
+                <select asp-for="Gearbox" class="form-control" asp-items="@Html.GetEnumSelectList<GearBoxType>()"></select>
+                <span asp-validation-for="Gearbox" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="PricePerDay">Price per day (€)</label>
+                <input asp-for="PricePerDay" class="form-control" />
+                <span asp-validation-for="PricePerDay" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="FuelTankVolume">Fueltank volume (l)</label>
+                <input asp-for="FuelTankVolume" class="form-control" />
+                <span asp-validation-for="FuelTankVolume" class="text-danger"></span>
+            </div>
 
-        <div class="form-group col">
-            <label asp-for="Brand"></label>
-            <input asp-for="Brand" class="form-control" />
-            <span asp-validation-for="Brand" class="text-danger"></span>
-        </div>
+            <div class="form-group col">
+                <label asp-for="FuelConsumption">Fuel consumption (l/100km)</label>
+                <input asp-for="FuelConsumption" class="form-control" />
+                <span asp-validation-for="FuelConsumption" class="text-danger"></span>
+            </div>
 
-        <div class="form-group col">
-            <label asp-for="Model"></label>
-            <input asp-for="Model" class="form-control" />
-            <span asp-validation-for="Model" class="text-danger"></span>
-        </div>
+            <div class="form-group col">
+                <label asp-for="TrunkVolume">Trunk volume (l)</label>
+                <input asp-for="TrunkVolume" class="form-control" />
+                <span asp-validation-for="TrunkVolume" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="Horsepower"></label>
+                <input asp-for="Horsepower" class="form-control" />
+                <span asp-validation-for="Horsepower" class="text-danger"></span>
+            </div>
 
-        <div class="form-group col">
-            <label asp-for="CoupeType"></label>
-            <select asp-for="CoupeType" class="form-control" asp-items="@Html.GetEnumSelectList<CoupeType>()"></select>
-            <span asp-validation-for="CoupeType" class="text-danger"></span>
-        </div>
-
-        <div class="form-group col">
-            <label asp-for="Seats"></label>
-            <input asp-for="Seats" class="form-control" />
-            <span asp-validation-for="Seats" class="text-danger"></span>
+            <div class="form-group col">
+                <label asp-for="EngineVolume">Engine volume (l)</label>
+                <input asp-for="EngineVolume" class="form-control" />
+                <span asp-validation-for="EngineVolume" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="Pictures"></label>
+                <input type="file" asp-for="Pictures" class="form-control" multiple />
+                <span asp-validation-for="Pictures" class="text-danger"></span>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="form-group col">
-            <label asp-for="RequiredLicenseCategory"></label>
-            <select asp-for="RequiredLicenseCategory" class="form-control" asp-items="@Html.GetEnumSelectList<LicenseCategory>()"></select>
-            <span asp-validation-for="RequiredLicenseCategory" class="text-danger"></span>
-        </div>
-
-        <div class="form-group col">
-            <label asp-for="FuelType"></label>
-            <select asp-for="FuelType" class="form-control" asp-items="@Html.GetEnumSelectList<FuelType>()"></select>
-            <span asp-validation-for="FuelType" class="text-danger"></span>
-        </div>
-
-        <div class="form-group col">
-            <label asp-for="Gearbox"></label>
-            <select asp-for="Gearbox" class="form-control" asp-items="@Html.GetEnumSelectList<GearBoxType>()"></select>
-            <span asp-validation-for="Gearbox" class="text-danger"></span>
-        </div>
-
-        <div class="form-group col">
-            <label asp-for="Doors"></label>
-            <input asp-for="Doors" class="form-control" />
-            <span asp-validation-for="Doors" class="text-danger"></span>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col">
-            <label asp-for="YearOfManufacturing"></label>
-            <input asp-for="YearOfManufacturing" class="form-control" />
-            <span asp-validation-for="YearOfManufacturing" class="text-danger"></span>
-        </div>
-
-        <div class="form-group col">
-            <label asp-for="FuelTankVolume"></label>
-            <input asp-for="FuelTankVolume" class="form-control" />
-            <span asp-validation-for="FuelTankVolume" class="text-danger"></span>
-        </div>
-
-        <div class="form-group col">
-            <label asp-for="FuelConsumption"></label>
-            <input asp-for="FuelConsumption" class="form-control" />
-            <span asp-validation-for="FuelConsumption" class="text-danger"></span>
-        </div>
-
-        <div class="form-group col">
-            <label asp-for="TrunkVolume"></label>
-            <input asp-for="TrunkVolume" class="form-control" />
-            <span asp-validation-for="TrunkVolume" class="text-danger"></span>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col">
-            <label asp-for="Horsepower"></label>
-            <input asp-for="Horsepower" class="form-control" />
-            <span asp-validation-for="Horsepower" class="text-danger"></span>
-        </div>
-
-        <div class="form-group col">
-            <label asp-for="EngineVolume"></label>
-            <input asp-for="EngineVolume" class="form-control" />
-            <span asp-validation-for="EngineVolume" class="text-danger"></span>
-        </div>
-
-        <div class="form-group col">
-            <label asp-for="PricePerDay"></label>
-            <input asp-for="PricePerDay" class="form-control" />
-            <span asp-validation-for="PricePerDay" class="text-danger"></span>
-        </div>
-
-        <div class="form-group col">
-            <label asp-for="Pictures"></label>
-            <input type="file" asp-for="Pictures" class="form-control" multiple />
-            <span asp-validation-for="Pictures" class="text-danger"></span>
-        </div>
-    </div>
-    <div class="row justify-content-xl-center" style="margin-top:40px">
-        <input type="submit" class="btn btn-primary" />
+    <div class="row justify-content-xl-center" style="margin-top:40px;justify-content:center;">
+        <button type="submit" style="width: 80px;height: 40px;background-color: rgb(236, 151, 31);border: none;border-radius: 3px;color: white;">Submit</button>
     </div>
 </form>

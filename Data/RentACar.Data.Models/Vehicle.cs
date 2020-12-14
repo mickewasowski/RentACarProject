@@ -55,6 +55,7 @@
         public decimal PricePerDay { get; set; }
 
         public string FacilityId { get; set; }
+
         public Facility Facility { get; set; }
 
         public virtual ICollection<Rating> Ratings { get; set; }

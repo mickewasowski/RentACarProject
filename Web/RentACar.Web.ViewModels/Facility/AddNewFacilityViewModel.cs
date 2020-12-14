@@ -5,7 +5,6 @@
 
     using RentACar.Data.Models;
     using RentACar.Services.Mapping;
-    using RentACar.Web.ViewModels.City;
 
     public class AddNewFacilityViewModel : IMapFrom<Facility>
     {
@@ -22,8 +21,8 @@
         public string Contacts { get; set; } // should it be a single string ??
 
         [Display(Name = "City")]
-        public string CityId { get; set; }
+        public Cities CityName { get; set; }
 
-        public IEnumerable<CityDropDownViewModel> Cities { get; set; }
+        //public IEnumerable<CityDropDownViewModel> Cities { get; set; }
     }
 }

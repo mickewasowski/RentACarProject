@@ -2,6 +2,7 @@
 {
     using System.Linq;
     using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using RentACar.Services.Data;
     using RentACar.Web.ViewModels.Facility;
@@ -21,6 +22,7 @@
             this.facilityService = facilityService;
         }
 
+        [Authorize]
         public IActionResult AddVehicle()
         {
             var facilities = this.facilityService.GetAll<FacilityDropDownViewModel>();
@@ -32,6 +34,7 @@
         }
 
         [HttpPost]
+        //[Authorize]
         public async Task<IActionResult> AddVehicle(AddVehicleViewModel input)
         {
             var vehicleID = await this.vehicleService.AddVehicle(input);
@@ -50,17 +53,7 @@
 
         public IActionResult VehicleDetails(string id)
         {
-            //var images = this.vehicleService.GetAllPicturesById<CarImagesViewModel>(id);
-
             var vehicle = this.vehicleService.GetById(id);
-
-            //vehicle.Images = images;
-
-            //vehicle.Images = new VehicleDetailsViewModel { Images = images };
-
-            // fix the error/warning ^^^
-
-            // do something to map the list of pictures ???
 
             return this.View(vehicle);
         }

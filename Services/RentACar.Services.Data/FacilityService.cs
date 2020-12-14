@@ -25,7 +25,7 @@
                 Name = input.Name,
                 Address = input.Address,
                 Contacts = input.Contacts,
-                CityId = input.CityId,
+                CityName = input.CityName,
             };
 
             await this.facilitiesRepository.AddAsync(facility);

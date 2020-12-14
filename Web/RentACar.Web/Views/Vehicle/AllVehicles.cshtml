@@ -1,37 +1,50 @@
 ﻿@model RentACar.Web.ViewModels.Vehicle.AllVehiclesViewModel
 
-@{ 
+@{
     this.ViewData["Title"] = "All vehicles";
 }
 
-
-<div class="container row">
+@*width: 30rem;*@
+<div class="container row" style="padding: 10px;">
     @foreach (var vehicle in this.Model.Vehicles)
     {
-        <div class="card col" style="width: 18rem;">
-            <img class="card-img-top" src="@vehicle.Picture" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">@vehicle.Brand</h5>
-                <h6 class="card-title">@vehicle.Model</h6>
+        <div class="card col" style="width: 18rem;margin-right: 10px;margin-left: 10px;">
+            <img class="card-img-top" src="@vehicle.Picture" alt="Card image cap" style="width: 170px;height: 120px;">
+            <div class="card-body" style="padding: 5px;">
+                <h5 class="card-title" style="margin-bottom: 2px;text-align:center;">@vehicle.Brand</h5>
+                <h6 class="card-title" style="margin-bottom: 2px;text-align:center;">@vehicle.Model</h6>
             </div>
             <ul class="list-group list-group-flush">
-                <label asp-for="@vehicle.Seats"></label>
-                <li class="list-group-item">@vehicle.Seats</li>
+                <label asp-for="@vehicle.Seats" style="border-bottom: solid 1px lightgrey;margin-bottom: 7px;margin-top: -2px;text-align: center;">Seats: @vehicle.Seats</label>
 
-                <label asp-for="@vehicle.Doors"></label>
-                <li class="list-group-item">@vehicle.Doors</li>
+                <label asp-for="@vehicle.Doors" style="border-bottom: solid 1px lightgrey;margin-bottom: 7px;margin-top: -2px;text-align: center;">Doors: @vehicle.Doors</label>
 
-                <label asp-for="@vehicle.FuelType">Fuel Type</label>
-                <li class="list-group-item">@vehicle.FuelType</li>
+                <label asp-for="@vehicle.FuelType" style="border-bottom: solid 1px lightgrey;margin-bottom: 7px;margin-top: -2px;text-align: center;">Fuel Type: @vehicle.FuelType</label>
 
-                <label asp-for="@vehicle.Gearbox"></label>
-                <li class="list-group-item">@vehicle.Gearbox</li>
+                <label asp-for="@vehicle.Gearbox" style="border-bottom: solid 1px lightgrey;margin-bottom: 7px;margin-top: -2px;text-align: center;">Gearbox: @vehicle.Gearbox</label>
 
-                <label asp-for="@vehicle.PricePerDay">Price per day</label>
-                <li class="list-group-item">@vehicle.PricePerDay</li>
+                <label asp-for="@vehicle.PricePerDay" style="margin-bottom: 7px;margin-top: -2px;text-align: center;">Price per day: @vehicle.PricePerDay</label>
             </ul>
-            <div class="card-body">
-                <a href="VehicleDetails/@vehicle.Id" class="card-link">Details</a>
+            <div class="buttons" style="display:flex;">
+                <div class="card-body" style="padding: 10px 0px;display: flex;justify-content: center;align-items: center;float:left;">
+                    <a href="VehicleDetails/@vehicle.Id" class="card-link" style="width:60px;text-align:center;border: none;background-color: rgb(22, 145, 222);border-radius: 8px;color: white;">Details</a>
+                </div>
+
+                <div style="float:right;margin:auto;">
+                    @if (vehicle.IsBooked)
+                    {
+                        <a style="width: 60px;background-color: red;color: white;border-radius: 8px;border: none;text-align: center;padding: 3px 5px;">
+                            Booked
+                        </a>
+                    }
+                    else
+                    {
+                        @*href="CreateOffer/@vehicle.Id"*@
+                        <a href="/Offer/CreateOffer/@vehicle.Id" style="width:80px;background-color:green;color:white;border-radius:8px;border:none;text-align:center;padding:3px 5px;">
+                            Book Now
+                        </a>
+                    }
+                </div>
             </div>
         </div>
     }

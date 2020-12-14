@@ -15,21 +15,23 @@
 
         public virtual Vehicle Vehicle { get; set; }
 
-        public PackageType PackageType { get; set; }
-
-        public decimal Price { get; set; }
+        //public PackageType PackageType { get; set; }
 
         public DateTime StartDate{ get; set; }
 
         public DateTime EndDate { get; set; }
+
+        public int TotalDays => (this.EndDate - this.StartDate).Days;
+
+        public decimal Price => this.TotalDays * this.Vehicle.PricePerDay;
 
         public string UserID { get; set; }
 
         public virtual ApplicationUser User { get; set; }  // is this the creator or the customer ??
 
         // Deletable Entity
-        public bool IsDeleted { get ; set ; }
+        public bool IsDeleted { get; set; }
 
-        public DateTime? DeletedOn { get ; set ; }
+        public DateTime? DeletedOn { get; set; }
     }
 }

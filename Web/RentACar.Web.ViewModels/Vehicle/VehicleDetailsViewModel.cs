@@ -6,6 +6,7 @@
     using AutoMapper;
     using RentACar.Data.Models;
     using RentACar.Services.Mapping;
+    using RentACar.Web.ViewModels.Comment;
     using RentACar.Web.ViewModels.Image;
 
     public class VehicleDetailsViewModel /*: IMapFrom<Vehicle>*/
@@ -44,9 +45,7 @@
 
         public bool IsBooked { get; set; }
 
-        //public IEnumerable<Rating> Ratings { get; set; }
-
-        //public GalleryViewModel Images { get; set; }
+        public CommentInfoInputModel Comment { get; set; }
 
         public IEnumerable<CarImagesViewModel> Images { get; set; }
     }

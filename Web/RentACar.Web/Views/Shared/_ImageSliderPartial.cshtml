@@ -5,12 +5,12 @@
 }
 
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width:400px;float:left;">
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-right: 55px; width: 400px; float: left;">
     <div class="carousel-inner">
         @foreach (var pic in @Model.Images)
         {
             <div class="carousel-item" id="@pic.Id">
-                <img class="d-block w-100" src="@pic.URL" id="@pic.Id" style="width:400px;">
+                <img class="d-block w-100" src="@pic.URL" id="@pic.Id" style="height:290px;width: 400px;border-radius: 7px;">
             </div>
         }
     </div>

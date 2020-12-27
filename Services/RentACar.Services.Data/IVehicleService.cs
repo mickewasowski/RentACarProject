@@ -13,5 +13,7 @@
         IEnumerable<T> GetAllPicturesById<T>(string id);
 
         Task<string> AddVehicle(AddVehicleViewModel input);
+
+        Task BookVehicle(string id);
     }
 }

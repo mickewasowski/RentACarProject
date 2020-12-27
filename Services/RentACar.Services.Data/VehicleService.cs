@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using Microsoft.EntityFrameworkCore;
     using RentACar.Data.Common.Repositories;
     using RentACar.Data.Models;
     using RentACar.Services.Mapping;
@@ -60,6 +61,15 @@
             var vehicleID = vehicle.Id;
 
             return vehicleID;
+        }
+
+        public async Task BookVehicle(string id)
+        {
+            var vehicle = this.vehicleRepository.All().FirstOrDefault(x => x.Id == id);
+
+            vehicle.IsBooked = true;
+
+            await this.vehicleRepository.SaveChangesAsync();
         }
 
         public IEnumerable<T> GetAllPicturesById<T>(string id)
@@ -124,6 +134,7 @@
                 Horsepower = vehicle.Horsepower,
                 EngineVolume = vehicle.EngineVolume,
                 PricePerDay = vehicle.PricePerDay,
+                IsBooked = vehicle.IsBooked,
                 Images = imagesList,
             };
 

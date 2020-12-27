@@ -5,10 +5,10 @@
 }
 
 @*width: 30rem;*@
-<div class="container row" style="padding: 10px;">
+<div class="container row col-md-8" style="padding: 10px;opacity:0.95;">
     @foreach (var vehicle in this.Model.Vehicles)
     {
-        <div class="card col" style="width: 18rem;margin-right: 10px;margin-left: 10px;">
+        <div class="card col-sm" style="width: 18rem;margin-right: 10px;margin-left: 10px;">
             <img class="card-img-top" src="@vehicle.Picture" alt="Card image cap" style="width: 170px;height: 120px;">
             <div class="card-body" style="padding: 5px;">
                 <h5 class="card-title" style="margin-bottom: 2px;text-align:center;">@vehicle.Brand</h5>
@@ -26,8 +26,8 @@
                 <label asp-for="@vehicle.PricePerDay" style="margin-bottom: 7px;margin-top: -2px;text-align: center;">Price per day: @vehicle.PricePerDay</label>
             </ul>
             <div class="buttons" style="display:flex;">
-                <div class="card-body" style="padding: 10px 0px;display: flex;justify-content: center;align-items: center;float:left;">
-                    <a href="VehicleDetails/@vehicle.Id" class="card-link" style="width:60px;text-align:center;border: none;background-color: rgb(22, 145, 222);border-radius: 8px;color: white;">Details</a>
+                <div class="card-body" style="padding: 10px 0px;justify-content: center;align-items: center;float:left;">
+                    <a href="VehicleDetails/@vehicle.Id" class="card-link" style="float:left;width:60px;text-align:center;border: none;background-color: rgb(22, 145, 222);border-radius: 8px;color: white;">Details</a>
                 </div>
 
                 <div style="float:right;margin:auto;">

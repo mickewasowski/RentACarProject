@@ -199,8 +199,8 @@ namespace RentACar.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("LicenseCategories")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("LicenseCategories")
+                        .HasColumnType("int");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -315,14 +315,14 @@ namespace RentACar.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PackageType")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("TotalDays")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserID")
                         .HasColumnType("nvarchar(450)");
@@ -372,45 +372,6 @@ namespace RentACar.Data.Migrations
                     b.HasIndex("VehicleId");
 
                     b.ToTable("Pictures");
-                });
-
-            modelBuilder.Entity("RentACar.Data.Models.Purchase", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ApplicationUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("OfferID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("VehicleID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUserId");
-
-                    b.HasIndex("IsDeleted");
-
-                    b.HasIndex("OfferID");
-
-                    b.HasIndex("VehicleID");
-
-                    b.ToTable("Purchases");
                 });
 
             modelBuilder.Entity("RentACar.Data.Models.Rating", b =>
@@ -559,6 +520,9 @@ namespace RentACar.Data.Migrations
                     b.Property<double>("TrunkVolume")
                         .HasColumnType("float");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("YearOfManufacturing")
                         .HasColumnType("int");
 
@@ -567,6 +531,8 @@ namespace RentACar.Data.Migrations
                     b.HasIndex("FacilityId");
 
                     b.HasIndex("IsDeleted");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Vehicles");
                 });
@@ -625,7 +591,7 @@ namespace RentACar.Data.Migrations
             modelBuilder.Entity("RentACar.Data.Models.Offer", b =>
                 {
                     b.HasOne("RentACar.Data.Models.ApplicationUser", "User")
-                        .WithMany()
+                        .WithMany("PurchaseHistory")
                         .HasForeignKey("UserID");
 
                     b.HasOne("RentACar.Data.Models.Vehicle", "Vehicle")
@@ -642,25 +608,6 @@ namespace RentACar.Data.Migrations
                     b.HasOne("RentACar.Data.Models.Vehicle", null)
                         .WithMany("Pictures")
                         .HasForeignKey("VehicleId");
-                });
-
-            modelBuilder.Entity("RentACar.Data.Models.Purchase", b =>
-                {
-                    b.HasOne("RentACar.Data.Models.ApplicationUser", null)
-                        .WithMany("PurchaseHistory")
-                        .HasForeignKey("ApplicationUserId");
-
-                    b.HasOne("RentACar.Data.Models.Offer", "Offer")
-                        .WithMany()
-                        .HasForeignKey("OfferID");
-
-                    b.HasOne("RentACar.Data.Models.Vehicle", "Vehicle")
-                        .WithMany()
-                        .HasForeignKey("VehicleID");
-
-                    b.Navigation("Offer");
-
-                    b.Navigation("Vehicle");
                 });
 
             modelBuilder.Entity("RentACar.Data.Models.Rating", b =>
@@ -682,7 +629,13 @@ namespace RentACar.Data.Migrations
                         .WithMany("Vehicles")
                         .HasForeignKey("FacilityId");
 
+                    b.HasOne("RentACar.Data.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
                     b.Navigation("Facility");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("RentACar.Data.Models.ApplicationUser", b =>

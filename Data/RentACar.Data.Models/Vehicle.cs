@@ -11,7 +11,7 @@
         public Vehicle()
         {
             this.Id = Guid.NewGuid().ToString();
-            this.Ratings = new HashSet<Rating>();
+            this.Ratings = new HashSet<Comment>();
             this.Pictures = new HashSet<Picture>();
         }
 
@@ -58,7 +58,13 @@
 
         public Facility Facility { get; set; }
 
-        public virtual ICollection<Rating> Ratings { get; set; }
+        public string UserId { get; set; }
+
+        public ApplicationUser User { get; set; }
+
+        // Add user -> author
+
+        public virtual ICollection<Comment> Ratings { get; set; }
 
         public virtual ICollection<Picture> Pictures { get; set; }
 

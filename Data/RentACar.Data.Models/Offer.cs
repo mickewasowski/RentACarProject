@@ -21,9 +21,9 @@
 
         public DateTime EndDate { get; set; }
 
-        public int TotalDays => (this.EndDate - this.StartDate).Days;
+        public int TotalDays { get; set; }
 
-        public decimal Price => this.TotalDays * this.Vehicle.PricePerDay;
+        public decimal Price { get; set; }
 
         public string UserID { get; set; }
 

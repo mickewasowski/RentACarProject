@@ -9,11 +9,13 @@
 
         public string Model { get; set; }
 
-        public CoupeType CoupeType { get; set; }
+        public string CoupeType { get; set; }
 
         public double FuelConsumption { get; set; }
 
         public int Horsepower { get; set; }
+
+        public string RequiredLicenseCategory { get; set; }
 
         public decimal PricePerDay { get; set; }
     }

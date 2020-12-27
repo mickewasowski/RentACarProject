@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RentACar.Data.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class InitialUpdatedMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,7 +32,7 @@ namespace RentACar.Data.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     FullName = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
                     Age = table.Column<int>(type: "int", nullable: true),
-                    LicenseCategories = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LicenseCategories = table.Column<int>(type: "int", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -222,6 +222,7 @@ namespace RentACar.Data.Migrations
                     IsBooked = table.Column<bool>(type: "bit", nullable: false),
                     PricePerDay = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     FacilityId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -230,6 +231,12 @@ namespace RentACar.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Vehicles", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Vehicles_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Vehicles_Facilities_FacilityId",
                         column: x => x.FacilityId,
@@ -244,8 +251,6 @@ namespace RentACar.Data.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     VehicleID = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    PackageType = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserID = table.Column<string>(type: "nvarchar(450)", nullable: true),
@@ -321,42 +326,6 @@ namespace RentACar.Data.Migrations
                     table.ForeignKey(
                         name: "FK_Ratings_Vehicles_VehicleId",
                         column: x => x.VehicleId,
-                        principalTable: "Vehicles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Purchases",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    VehicleID = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    OfferID = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Purchases", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Purchases_AspNetUsers_ApplicationUserId",
-                        column: x => x.ApplicationUserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Purchases_Offers_OfferID",
-                        column: x => x.OfferID,
-                        principalTable: "Offers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Purchases_Vehicles_VehicleID",
-                        column: x => x.VehicleID,
                         principalTable: "Vehicles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -442,26 +411,6 @@ namespace RentACar.Data.Migrations
                 column: "VehicleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Purchases_ApplicationUserId",
-                table: "Purchases",
-                column: "ApplicationUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Purchases_IsDeleted",
-                table: "Purchases",
-                column: "IsDeleted");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Purchases_OfferID",
-                table: "Purchases",
-                column: "OfferID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Purchases_VehicleID",
-                table: "Purchases",
-                column: "VehicleID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Ratings_IsDeleted",
                 table: "Ratings",
                 column: "IsDeleted");
@@ -490,6 +439,11 @@ namespace RentACar.Data.Migrations
                 name: "IX_Vehicles_IsDeleted",
                 table: "Vehicles",
                 column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Vehicles_UserId",
+                table: "Vehicles",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -510,10 +464,10 @@ namespace RentACar.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Pictures");
+                name: "Offers");
 
             migrationBuilder.DropTable(
-                name: "Purchases");
+                name: "Pictures");
 
             migrationBuilder.DropTable(
                 name: "Ratings");
@@ -525,13 +479,10 @@ namespace RentACar.Data.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Offers");
+                name: "Vehicles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "Vehicles");
 
             migrationBuilder.DropTable(
                 name: "Facilities");

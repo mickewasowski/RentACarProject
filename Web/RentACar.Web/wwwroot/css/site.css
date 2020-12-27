@@ -11,11 +11,20 @@ a.navbar-brand {
 -------------------------------------------------- */
 html {
     font-size: 14px;
+    font-family:Garamond,serif;
 }
 @media (min-width: 768px) {
     html {
         font-size: 16px;
     }
+}
+
+body {
+    background-image: url("../background-pic/651.jpg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:1000px 900px;
+    color: black;
 }
 
 .border-top {
@@ -46,6 +55,7 @@ body {
     margin-bottom: 60px;
 }
 .footer {
+    color:white;
     position: absolute;
     bottom: 0;
     width: 100%;

@@ -16,22 +16,20 @@ namespace RentACar.Data.Models
             this.Roles = new HashSet<IdentityUserRole<string>>();
             this.Claims = new HashSet<IdentityUserClaim<string>>();
             this.Logins = new HashSet<IdentityUserLogin<string>>();
-            this.PurchaseHistory = new HashSet<Purchase>();
-            this.Ratings = new HashSet<Rating>();
+            this.PurchaseHistory = new HashSet<Offer>();
+            this.Ratings = new HashSet<Comment>();
         }
 
-        //[Required]
         [MaxLength(40)]
         public string FullName { get; set; }
 
-        [Range(18, 65, ErrorMessage ="Please enter a valid age number!")]
         public int? Age { get; set; }
 
-        public string LicenseCategories { get; set; } // comma separated list of license categories
+        public LicenseCategory? LicenseCategories { get; set; } // comma separated list of license categories
 
-        public virtual ICollection<Purchase> PurchaseHistory { get; set; }
+        public virtual ICollection<Offer> PurchaseHistory { get; set; }
 
-        public virtual ICollection<Rating> Ratings { get; set; }
+        public virtual ICollection<Comment> Ratings { get; set; }
 
         // Audit info
         public DateTime CreatedOn { get; set; }

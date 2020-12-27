@@ -1,28 +1,58 @@
 ﻿@model RentACar.Web.ViewModels.Offer.CreateOfferViewModel
 
 
-<form method="post" enctype="multipart/form-data">
-    <div>
-        <label asp-for="StartDate"></label>
-        <input asp-for="StartDate" class="form-control" type="date" />
-        <span asp-validation-for="StartDate" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="EndDate"></label>
-        <input asp-for="EndDate" class="form-control" type="date" />
-        <span asp-validation-for="EndDate" class="text-danger"></span>
+<div style="justify-content: center;display: flex;">
+    <h1 style="color:rgb(28, 51, 228);">Enrol for @Model.VehicleDetails.Brand @Model.VehicleDetails.Model</h1>
+</div>
+
+<form method="post" enctype="multipart/form-data" style="-webkit-box-shadow: 9px 7px 28px 5px rgba(0,0,0,0.76);-moz-box-shadow: 9px 7px 28px 5px rgba(0,0,0,0.76);box-shadow: 9px 7px 28px 5px rgba(0,0,0,0.76);width: fit-content;color: rgb(28, 51, 235);margin: auto;margin-top: 25px;padding-left: 20px;padding-right: 20px;padding-bottom: 20px;border-radius: 10px;background: rgb(211,203,207);background: linear-gradient(0deg, rgba(211,203,207,1) 0%, rgba(217,234,104,1) 96%, rgba(232,230,118,0.7206232834930848) 100%);">
+    
+    <div class="container" style="display:flex;vertical-align:top;margin:auto;padding:25px;">
+        <div class="offer-info" style="display:block;float:left;padding:20px;">
+            <div style="margin-bottom:10px;">
+                <label asp-for="StartDate"></label>
+                <input asp-for="StartDate" class="form-control" type="date" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div style="margin-top:10px;">
+                <label asp-for="EndDate"></label>
+                <input asp-for="EndDate" class="form-control" type="date" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+
+            <article style="vertical-align:bottom;margin-top:30px;">
+                <h6>Discounts:</h6>
+                <p>-10%: more than 7 days</p>
+                <p>-20%: more than 30days</p>
+            </article>
+        </div>
+
+        <div class="vehicle-summary" style="display:inline-grid;float:right;padding:20px;">
+            <label asp-for="VehicleDetails.Brand"></label>
+            <input asp-for="VehicleDetails.Brand" disabled />
+
+            <label asp-for="VehicleDetails.Model"></label>
+            <input asp-for="VehicleDetails.Model" disabled />
+
+            <label asp-for="VehicleDetails.CoupeType">Coupe type</label>
+            <input asp-for="VehicleDetails.CoupeType" disabled />
+
+            <label asp-for="VehicleDetails.FuelConsumption">Fuel consumption</label>
+            <input asp-for="VehicleDetails.FuelConsumption" disabled />
+
+            <label asp-for="VehicleDetails.Horsepower"></label>
+            <input asp-for="VehicleDetails.Horsepower" disabled />
+
+            <label asp-for="VehicleDetails.RequiredLicenseCategory">Required License</label>
+            <input asp-for="VehicleDetails.RequiredLicenseCategory" disabled />
+
+            <label asp-for="VehicleDetails.PricePerDay">Price per day</label>
+            <input asp-for="VehicleDetails.PricePerDay" disabled />
+        </div>
     </div>
 
-    <div>
-        <label asp-for="VehicleDetails.PricePerDay"></label>
-        <input asp-for="VehicleDetails.PricePerDay" class="form-control" disabled />
+    <div style="text-align:center;margin-bottom:10px;">
+        <input class="btn-primary" style="border: none;border-radius: 5px;padding: 5px;background-color: orange;" type="submit" value="Submit request">
     </div>
 
-    <article>
-        <h6>Discounts:</h6>
-        <p>-10%: more than 7 days</p>
-        <p>-20%: more than 30days</p>
-    </article>
-
-    <input type="submit" value="Submit request">
 </form>

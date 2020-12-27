@@ -14,12 +14,14 @@
         private readonly IVehicleService vehicleService;
         private readonly ICloudinaryService cloudinaryService;
         private readonly IFacilityService facilityService;
+        private readonly ICommentService commentService;
 
-        public VehicleController(IVehicleService vehicleService, ICloudinaryService cloudinaryService, IFacilityService facilityService)
+        public VehicleController(IVehicleService vehicleService, ICloudinaryService cloudinaryService, IFacilityService facilityService, ICommentService commentService)
         {
             this.vehicleService = vehicleService;
             this.cloudinaryService = cloudinaryService;
             this.facilityService = facilityService;
+            this.commentService = commentService;
         }
 
         [Authorize]
@@ -51,9 +53,13 @@
             return this.View(model);
         }
 
-        public IActionResult VehicleDetails(string id)
+        public async Task<IActionResult> VehicleDetails(string id)
         {
             var vehicle = this.vehicleService.GetById(id);
+
+            var comments = await this.commentService.Latest3VehicleComments(id);
+
+            vehicle.LatestComments = comments;
 
             return this.View(vehicle);
         }

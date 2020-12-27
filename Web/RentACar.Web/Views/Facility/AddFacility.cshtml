@@ -8,8 +8,20 @@
 }
 
 <form method="post"
-      enctype="multipart/form-data">
-    <div class="row">
+      enctype="multipart/form-data" style="-webkit-box-shadow: 9px 7px 28px 5px rgba(0,0,0,0.76);
+        -moz-box-shadow: 9px 7px 28px 5px rgba(0,0,0,0.76);
+        box-shadow: 9px 7px 28px 5px rgba(0,0,0,0.76);
+        width: fit-content;
+        color: rgb(28, 51, 235);
+        margin: auto;
+        margin-top: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+        background: rgb(211,203,207);
+        background: linear-gradient(0deg, rgba(211,203,207,1) 0%, rgba(217,234,104,1) 96%, rgba(232,230,118,0.7206232834930848) 100%);">
+    <div class="row" style="display:initial;">
         <div class="form-group col">
             <label asp-for="CityName"></label>
             <select asp-for="CityName" class="form-control" asp-items="@Html.GetEnumSelectList<Cities>()"></select>
@@ -34,7 +46,7 @@
             <span asp-validation-for="Contacts" class="text-danger"></span>
         </div>
 
-        <div class="col justify-content-xl-center" style="margin-top:40px">
+        <div class="col justify-content-xl-center" style="margin-top:40px;text-align:center;">
             <input type="submit" class="btn btn-primary" />
         </div>
     </div>

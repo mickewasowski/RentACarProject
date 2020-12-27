@@ -35,7 +35,7 @@
 
         public DbSet<Picture> Pictures { get; set; }
 
-        public DbSet<Comment> Ratings { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
         public DbSet<Setting> Settings { get; set; }
 

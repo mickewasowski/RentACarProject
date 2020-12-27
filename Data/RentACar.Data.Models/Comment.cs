@@ -6,14 +6,14 @@ namespace RentACar.Data.Models
 
     using RentACar.Data.Common.Models;
 
-    public class Rating : BaseModel<string>, IDeletableEntity
+    public class Comment : BaseModel<string>, IDeletableEntity
     {
-        public Rating()
+        public Comment()
         {
             this.Id = Guid.NewGuid().ToString();
         }
 
-        public int StarRating { get; set; }
+        public string Title { get; set; }
 
         [Required]
         [MaxLength(200)]
@@ -22,6 +22,10 @@ namespace RentACar.Data.Models
         public string UserID { get; set; }
 
         public virtual ApplicationUser User { get; set; }
+
+        public string VehicleID { get; set; }
+
+        public Vehicle Vehicle { get; set; }
 
         public DateTime DateAdded { get; set; }
 

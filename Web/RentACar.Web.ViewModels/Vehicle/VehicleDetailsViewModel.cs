@@ -47,6 +47,8 @@
 
         public CommentInfoInputModel Comment { get; set; }
 
+        public IEnumerable<CommentsDetailsViewModel> LatestComments { get; set; }
+
         public IEnumerable<CarImagesViewModel> Images { get; set; }
     }
 }

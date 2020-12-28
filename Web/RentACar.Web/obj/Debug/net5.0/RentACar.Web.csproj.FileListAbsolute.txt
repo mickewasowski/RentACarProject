@@ -502,5 +502,6 @@ C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\net5.0\Razor\Are
 C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\Vehicles\Edit.cshtml.g.cs
 C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\Vehicles\Index.cshtml.g.cs
 C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\net5.0\Razor\Views\User\MyProfile.cshtml.g.cs
 C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\net5.0\Razor\Views\Offer\AllOffersPerUser.cshtml.g.cs
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\net5.0\Razor\Views\Facility\AllFacilities.cshtml.g.cs
+C:\Users\R. Yorgova\Desktop\RentACar\Web\RentACar.Web\obj\Debug\net5.0\Razor\Views\User\EditMyProfile.cshtml.g.cs

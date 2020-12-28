@@ -10,5 +10,7 @@
     public interface IUserService
     {
         Task EditProfile(EditMyProfileViewModel input, string userID);
+
+        //Task<bool> GetUserInfoByID(string userID);
     }
 }

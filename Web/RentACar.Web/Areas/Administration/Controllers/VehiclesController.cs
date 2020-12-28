@@ -11,17 +11,20 @@
     using RentACar.Data;
     using RentACar.Data.Common.Repositories;
     using RentACar.Data.Models;
+    using RentACar.Web.Areas.Administration.Services;
 
     [Area("Administration")]
     public class VehiclesController : Controller
     {
         private readonly IDeletableEntityRepository<Vehicle> dataRepo;
         private readonly IRepository<Facility> facilityRepo;
+        private readonly IVehicleAdminService vehicleAdminService;
 
-        public VehiclesController(IDeletableEntityRepository<Vehicle> dataRepo, IRepository<Facility> facilityRepo)
+        public VehiclesController(IDeletableEntityRepository<Vehicle> dataRepo, IRepository<Facility> facilityRepo, IVehicleAdminService vehicleAdminService)
         {
             this.dataRepo = dataRepo;
             this.facilityRepo = facilityRepo;
+            this.vehicleAdminService = vehicleAdminService;
         }
 
         // GET: Administration/Vehicles
@@ -114,7 +117,7 @@
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!this.VehicleExists(vehicle.Id))
+                    if (!await this.VehicleExists(vehicle.Id))
                     {
                         return this.NotFound();
                     }
@@ -156,15 +159,27 @@
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var vehicle = await this.dataRepo.All().FirstOrDefaultAsync(x => x.Id == id);
-            this.dataRepo.Delete(vehicle);
-            await this.dataRepo.SaveChangesAsync();
-            return this.RedirectToAction(nameof(this.Index));
+            var delete = await this.vehicleAdminService.Delete(id);
+
+            //var vehicle = await this.dataRepo.All().FirstOrDefaultAsync(x => x.Id == id);
+            //this.dataRepo.Delete(vehicle);
+            //await this.dataRepo.SaveChangesAsync();
+
+            if (delete == "Success!")
+            {
+                return this.Redirect("/Administration/Vehicles/Index");
+            }
+            else
+            {
+                return this.NotFound();
+            }
         }
 
-        private bool VehicleExists(string id)
+        private async Task<bool> VehicleExists(string id)
         {
-            return this.dataRepo.All().Any(e => e.Id == id);
+            var result = await this.vehicleAdminService.VehicleExists(id);
+
+            return result;
         }
     }
 }

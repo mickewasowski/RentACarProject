@@ -29,5 +29,19 @@
 
             await this.userRepo.SaveChangesAsync();
         }
+
+        //public async Task<bool> GetUserInfoByID(string userID)
+        //{
+        //    var user = await this.userRepo.All().FirstOrDefaultAsync(x => x.Id == userID);
+
+        //    if (user.FullName == null || user.Age == null || user.LicenseCategories == null)
+        //    {
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        return true;
+        //    }
+        //}
     }
 }

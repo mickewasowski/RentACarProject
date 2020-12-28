@@ -21,6 +21,7 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using RentACar.Web.Areas.Administration.Services;
 
     public class Startup
     {
@@ -78,6 +79,8 @@
             services.AddTransient<ICommentService, CommentService>();
 
             services.AddTransient<IUserService, UserService>();
+
+            services.AddTransient<IVehicleAdminService, VehicleAdminService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
